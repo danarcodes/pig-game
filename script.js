@@ -31,6 +31,7 @@ const init = function () {
   player1El.classList.remove('player--winner');
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+  btnWon.innerHTML = '';
 };
 
 init();
@@ -86,8 +87,7 @@ btnHold.addEventListener('click', function () {
       diceEl.classList.add('hidden');
       // add button, which shows which Player won
       const winner = document.getElementById(`name--${activePlayer}`).innerHTML;
-
-      const node = document.createTextNode(`${winner} won!`);
+      const node = document.createTextNode(`🎉${winner} won!`);
       const element = document.querySelector('.btn--won');
       element.appendChild(node);
       btnWon.classList.remove('hidden');
